@@ -1,0 +1,2 @@
+# Control-asistencia-CEET
+El centro de electricidad electrónica y telecomunicaciones, necesita tener el control de la cantidad de aprendices que asisten a formación en las 3 diferentes jornadas(diurna, nocturna, fines de semana).  para ello  existe una persona encargada (monitor) de pasar por cada uno de los ambientes, y realizar el debido proceso anotando en un hoja la respectiva información. (ficha, instructor, aprendices).
