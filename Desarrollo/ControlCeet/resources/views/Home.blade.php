@@ -1,1 +1,15 @@
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, corporis! Praesentium repellat iure adipisci fugiat esse porro dignissimos odio ex sunt! Rem ad assumenda aspernatur, eius ipsum accusamus sunt voluptate.
+@extends('Layout/layout')
+
+@section('Login')
+<div style="">
+    <form action="" class="box">
+        <h1>Login</h1>
+        <input type="email" placeholder="Correo" name="correo" value="{{ old('correo') }}">
+        <input type="password" placeholder="Contraseña" name="password" value="{{ old('password') }}">
+        <input type="submit" value="Iniciar sesión">
+
+
+    </form>
+</div>
+@endsection
+
