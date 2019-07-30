@@ -13,3 +13,6 @@
 
 
 Route::get('/', 'LoginController@index')->name('Login.Index');
+
+
+Route::get('Inicio', 'InicioController@index')->name('Inicio.Index');

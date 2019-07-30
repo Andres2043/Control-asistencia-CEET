@@ -296,16 +296,15 @@
       <option name="presentableId" value="Default" />
       <updated>1564099645677</updated>
       <workItem from="1564099650052" duration="1019000" />
-      <workItem from="1564367303851" duration="6226000" />
+      <workItem from="1564367303851" duration="6835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7245000" />
+    <option name="totallyTimeSpent" value="7854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18154311" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
