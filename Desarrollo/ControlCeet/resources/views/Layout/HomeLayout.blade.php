@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/materialize/css/materialize.css ') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('IMG/logoSena.ico')}}">
     <title>Document</title>
 </head>
 <body>
