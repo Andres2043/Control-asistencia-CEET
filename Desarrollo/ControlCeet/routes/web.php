@@ -16,3 +16,9 @@ Route::get('/', 'LoginController@index')->name('Login.Index');
 
 
 Route::get('Inicio', 'InicioController@index')->name('Inicio.Index');
+
+Route::post('Login', 'InicioController@create')->name('LoginInicio.Index');
+
+Route::get('Registro/Fichas', 'RegistroFichasController@index')->name('RegistroFichas.Index');
+
+Route::get('Asistencia/Aprendices', 'AsistAprendicesController@index')->name('AsistenciaAprendices.Index');

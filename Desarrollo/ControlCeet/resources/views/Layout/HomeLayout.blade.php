@@ -6,16 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('libs/materialize/css/materialize.css ') }}">
+    <link rel="stylesheet" href="{{ asset('libs/materialize/css/materialize.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('IMG/logoSena.ico')}}">
     <title>Document</title>
 </head>
 <body>
-
+@include('All/Navbar')
 @yield('Inicio')
-
-
+@yield('RegistroFicha')
+@yield('Asistencia')
+@include('All/footer')
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

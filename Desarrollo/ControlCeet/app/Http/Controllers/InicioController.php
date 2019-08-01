@@ -23,7 +23,7 @@ class InicioController extends Controller
      */
     public function create()
     {
-        //
+        return view('Inicio');
     }
 
     /**

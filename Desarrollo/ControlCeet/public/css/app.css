@@ -146,3 +146,38 @@ body{
     color: black;
     background: #fff;
 }
+.Titulo{
+    padding: 5%;
+    box-shadow: 0 0 4em  green;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Courier New';
+}
+.contenedro{
+    background-color: white: 
+}
+.SpaceLogin{
+  margin-top: 5px;
+  margin-bottom: 100px; 
+  border: 2px solid green;
+  padding: 5px;
+  text-align: center;
+  background-color: #fff;
+}
+.SpaceLogin input[type = "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.SpaceLogin input[type ="submit"]:hover{
+    background: #2ecc71;
+}
