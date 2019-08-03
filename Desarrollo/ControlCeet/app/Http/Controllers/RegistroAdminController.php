@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RegistroFichasController extends Controller
+class RegistroAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class RegistroFichasController extends Controller
      */
     public function index()
     {
-        return view('Fichas/RegistroFichas');
+        return view('Admin/RegistroAdmin');
     }
 
     /**
@@ -81,12 +81,20 @@ class RegistroFichasController extends Controller
     {
         //
     }
-     public function Login()
+
+    public function Login()
     {
-        $credenciales = $this->validate(request(), [
-            'NombreFicha' => 'required|string|max:100',
-            'NumFicha'=> 'required|integer|max:7',
-            'Jornada' => 'required',
+        $this->validate(request(),[
+
+            'TipoDocumento' => 'required',
+            'NumeroDocumento' => 'required|max:11',
+            'PrimerNombre' => 'required|string',
+            'SegundoNombre'=>'required|string',
+            'PrimerApellido' => 'required|string',
+            'SegundoApellido' => 'required|string',
+            'correo' => 'email|required|string',
+            'Contraseña' => 'required|string',
+
         ]);
     }
 }

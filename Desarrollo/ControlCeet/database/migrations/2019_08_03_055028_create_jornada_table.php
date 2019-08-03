@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuarioTable extends Migration
+class CreateJornadaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateUsuarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('jornada', function (Blueprint $table) {
+            $table->increments('id_jornada');
+            $table->string('Tipo_jornada', 75);
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('jornada');
     }
 }

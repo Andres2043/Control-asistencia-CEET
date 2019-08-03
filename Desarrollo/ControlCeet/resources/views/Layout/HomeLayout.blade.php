@@ -16,6 +16,9 @@
 @yield('Inicio')
 @yield('RegistroFicha')
 @yield('Asistencia')
+@yield('RegistroAdmin')
+@yield('RegistroUsuarios')
+@yield('ListadoAsistencia')
 @include('All/footer')
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"

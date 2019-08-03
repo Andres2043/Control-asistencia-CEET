@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class InicioController extends Controller
 {
@@ -23,7 +24,7 @@ class InicioController extends Controller
      */
     public function create()
     {
-        return view('Inicio');
+       //
     }
 
     /**
@@ -80,5 +81,14 @@ class InicioController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function Login()
+    {
+        $credenciales = $this->validate(request(), [
+            'email' => 'email|required|string',
+            'password'=> 'required|string',
+        ]);
+
+        return view('Inicio');
     }
 }
