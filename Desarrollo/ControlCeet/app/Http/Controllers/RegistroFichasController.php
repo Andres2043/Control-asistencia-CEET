@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Jornada;
+use App\Ficha;
+
 
 class RegistroFichasController extends Controller
 {
@@ -13,7 +16,8 @@ class RegistroFichasController extends Controller
      */
     public function index()
     {
-        return view('Fichas/RegistroFichas');
+        $jornada=Jornada::all();
+        return view('Fichas/RegistroFichas', compact('jornada'));
     }
 
     /**
@@ -81,12 +85,21 @@ class RegistroFichasController extends Controller
     {
         //
     }
-     public function Login()
+     public function Login(Request $request)
     {
         $credenciales = $this->validate(request(), [
             'NombreFicha' => 'required|string|max:100',
-            'NumFicha'=> 'required|integer|max:7',
+            'NumFicha'=> 'required|integer',
             'Jornada' => 'required',
         ]);
+
+        Ficha::create([
+            'num_ficha'=>$request->input('NumFicha'),
+            'nombre_ficha'=>$request->input('NombreFicha'),
+            'fk_jornada'=>$request->input('Jornada')
+        ]);
+
+       return redirect('Inicio')->with('success','La ficha ha sido creada de forma exitosa!');
+
     }
 }

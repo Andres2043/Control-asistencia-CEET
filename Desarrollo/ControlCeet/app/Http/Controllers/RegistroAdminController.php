@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Admin;
+use App\TipoDocumento;
 
 class RegistroAdminController extends Controller
 {
@@ -13,7 +15,8 @@ class RegistroAdminController extends Controller
      */
     public function index()
     {
-        return view('Admin/RegistroAdmin');
+        $tipodocumento=TipoDocumento::all();
+        return view('Admin/RegistroAdmin', compact('tipodocumento'));
     }
 
     /**
@@ -82,7 +85,7 @@ class RegistroAdminController extends Controller
         //
     }
 
-    public function Login()
+     public function Login(Request $request)
     {
         $this->validate(request(),[
 
@@ -96,5 +99,18 @@ class RegistroAdminController extends Controller
             'Contraseña' => 'required|string',
 
         ]);
+
+        Admin::create([
+            'primer_nombre'=>$request->input('PrimerNombre'),
+            'segundo_nombre'=>$request->input('SegundoNombre'),
+            'primer_apellido'=>$request->input('PrimerApellido'),
+            'segundo_apellido'=>$request->input('SegundoApellido'),
+            'correo'=>$request->input('correo'),
+            'documento'=>$request->input('NumeroDocumento'),
+            'contraseña'=>$request->input('Contraseña'),
+            'fk_tipo_documento'=>$request->input('TipoDocumento')
+        ]);
+        return redirect('Inicio')->with('success','El administrador ha sido creado de forma exitosa!');
     }
+
 }

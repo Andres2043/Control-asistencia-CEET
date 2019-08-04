@@ -13,6 +13,7 @@
 </head>
 <body>
 @include('All/Navbar')
+@include('flash-message')
 @yield('Inicio')
 @yield('RegistroFicha')
 @yield('Asistencia')

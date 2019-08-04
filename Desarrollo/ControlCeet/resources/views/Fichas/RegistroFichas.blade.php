@@ -46,7 +46,9 @@
 				 <div class="input-field">
 			    <select name="Jornada">
 			      <option value="" disabled selected>Seleccione la jornada</option>
-			      <option value="">Option 1</option>
+			      @foreach($jornada as $jornadas)
+			      	<option value="{{ $jornadas->id_jornada}}">{{ $jornadas->Tipo_jornada}}</option>
+			      @endforeach
 			    </select>
 			    <label>Jornada</label>
 			    {!! $errors->first('Jornada', '<span class="help-block">:message</span>')!!}

@@ -19,6 +19,7 @@ class CreateAdministradorTable extends Migration
             $table->string('segundo_nombre' , 75);
             $table->string('primer_apellido' , 75);
             $table->string('segundo_apellido' , 75);
+            $table->string('documento', 15);
             $table->string('correo', 100);
             $table->string('contraseña', 100);
             $table->integer('fk_tipo_documento')->unsigned();
