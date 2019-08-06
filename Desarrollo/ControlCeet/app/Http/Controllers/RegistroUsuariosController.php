@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\TipoDocumento;
+
+use App\TipoUsuario;
+
+use App\Usuario;
+
 class RegistroUsuariosController extends Controller
 {
     /**
@@ -12,8 +18,11 @@ class RegistroUsuariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Usuarios/RegistroUsuarios');  
+    {   
+        $tipousuario=TipoUsuario::all();
+        $tipodocumento=TipoDocumento::all();
+
+        return view('Usuarios/RegistroUsuarios', constant('tipousuario', 'tipodocumento'));  
     }
 
     /**
@@ -101,8 +110,20 @@ class RegistroUsuariosController extends Controller
             'PrimerApellido' => 'required|string',
             'SegundoApellido' => 'required|string',
             'correo' => 'email|required|string',
-            'Contraseña' => 'required|string',
+            'NumeroDocumento' => 'required',
 
         ]);
+
+        Usuario::create([
+            'fk_tipoUsuario'=>$request->input('TipoUsuario'),
+            'fk_tipo_documento2'=>$request->input('TipoDocumento'),
+            'documento'=>$request->input('NumeroDocumento'),
+            'primer_nombre'=>$request->input('PrimerNombre'),
+            'segundo_nombre'=>$request->input('SegundoNombre'),
+            'primer_apellido'=>$request->input('PrimerApellido'),
+            'segundo_apellido'=>$request->input('SegundoApellido'),
+            'correo'=>$request->input('correo')
+        ]);
+
     }
 }

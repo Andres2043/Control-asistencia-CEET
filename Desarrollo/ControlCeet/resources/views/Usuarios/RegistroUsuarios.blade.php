@@ -27,7 +27,9 @@
 				<div class="input-field">
 			    <select name="TipoUsuario">
 			      <option value="" disabled selected>Seleccione el usuario</option>
-			      <option value="1">Option 1</option>
+			      @foreach($tipodocumento as $tipodoc)
+			      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
+			      @endforeach
 			    </select>
 			    <label>Tipo de Usuario</label>
 			    {!! $errors->first('TipoUsuario', '<span class="help-block">:message</span>')!!}
@@ -36,7 +38,9 @@
 				<div class="input-field">
 			    <select name="TipoDocumento">
 			      <option value="" disabled selected>Seleccione el documento</option>
-			      <option value="1">Option 1</option>
+			      @foreach($tipodocumento as $tipodoc)
+			      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
+			      @endforeach
 			    </select>
 			    <label>Tipo de documento</label>
 			    {!! $errors->first('TipoDocumento', '<span class="help-block">:message</span>')!!}

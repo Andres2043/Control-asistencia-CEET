@@ -22,7 +22,9 @@ class CreateUsuarioTable extends Migration
             $table->string('documento', 15);
             $table->string('correo', 100);
             $table->integer('fk_tipo_documento2')->unsigned();
+            $table->integer('fk_tipoUsuario')->unsigned();
             $table->foreign('fk_tipo_documento2')->references('id_documento')->on('tipo_documento');
+            $table->foreign('fk_tipoUsuario')->references('id_tipoUsuario')->on('tipo_usuario');
             $table->timestamps();
         });
     }
