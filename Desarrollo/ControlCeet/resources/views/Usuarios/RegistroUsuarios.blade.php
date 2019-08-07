@@ -22,38 +22,29 @@
 		<div class="SpaceLogin">
 			<form action="{{ route('RegistroUser.Login')}}" method="POST">
 				@csrf
-					<h2 style="font-family: 'Courier New';">Registro Usuario</h2>
-				<br>
-				<div class="input-field">
-			    <select name="TipoUsuario">
-			      <option value="" disabled selected>Seleccione el usuario</option>
-			      @foreach($tipodocumento as $tipodoc)
-			      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
-			      @endforeach
-			    </select>
-			    <label>Tipo de Usuario</label>
-			    {!! $errors->first('TipoUsuario', '<span class="help-block">:message</span>')!!}
-			  </div>
+					<h2 style="font-family: 'Courier New">Registro Usuario</h2>
 					<br>
-				<div class="input-field">
-			    <select name="TipoDocumento">
-			      <option value="" disabled selected>Seleccione el documento</option>
-			      @foreach($tipodocumento as $tipodoc)
-			      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
-			      @endforeach
-			    </select>
-			    <label>Tipo de documento</label>
-			    {!! $errors->first('TipoDocumento', '<span class="help-block">:message</span>')!!}
-			  </div>
-			  <br>
-				<div class="input-field ">
-					<input 
-						id="" 
-						name="NumeroDocumento" 
-						type="number">
-		          	<label for="">Numero de documento</label>
-		          	{!! $errors->first('NumeroDocumento', '<span class="help-block">:message</span>')!!}
+				<div class="input-fied">
+					<select name="TipoDocumento">
+						<option value="" disabled selected>Seleccione su documento</option>
+						@foreach($tipodocumento as $tipodoc)
+				      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
+				      	@endforeach
+					</select>
+					<label>Tipo de documento</label>
 				</div>
+				<br>
+				<br>
+				<div class="input-fied">
+					<select name="TipoUsuario">
+						<option value="" disabled selected>Seleccione al usuario</option>
+						@foreach($tipousuario as $tipouser)
+				      	<option value="{{ $tipodoc->id_documento}}">{{ $tipodoc->tp_documento }}</option>
+				      	@endforeach
+					</select>
+					<label>Tipo de usuario</label>
+				</div>
+				<br>
 				<div class="input-field ">
 					<input 
 						id="" 
@@ -61,27 +52,27 @@
 						type="text"
 						value="{{ old('PrimerNombre')}}">
 		          	<label for="">Primer Nombre</label>
-		          	{!! $errors->first('PrimerNombre', '<span class="help-block">:message</span>')!!}
+		          	
 				</div>
 				<br>
 				<div class="input-field ">
 					<input 
-						id=""
+						id="" 
 						name="SegundoNombre" 
 						type="text"
 						value="{{ old('SegundoNombre')}}">
 		          	<label for="">Segundo Nombre</label>
-		          	{!! $errors->first('SegundoNombre', '<span class="help-block">:message</span>')!!}
+		          	
 				</div>
 				<br>
 				<div class="input-field ">
 					<input 
-						id=""
+						id="" 
 						name="PrimerApellido" 
 						type="text"
 						value="{{ old('PrimerApellido')}}">
 		          	<label for="">Primer Apellido</label>
-		          	{!! $errors->first('PrimerApellido', '<span class="help-block">:message</span>')!!}
+		          	
 				</div>
 				<br>
 				<div class="input-field ">
@@ -91,7 +82,7 @@
 						type="text"
 						value="{{ old('SegundoApellido')}}">
 		          	<label for="last_name">Segundo Apellido</label>
-		          	{!! $errors->first('SegundoApellido', '<span class="help-block">:message</span>')!!}
+		          	
 				</div>
 				<br>
 				<div class="input-field ">
@@ -101,9 +92,9 @@
 						type="text"
 						value="{{ old('correo')}}">
 		          	<label for="">Correo</label>
-		          	{!! $errors->first('correo', '<span class="help-block">:message</span>')!!}
+		          	
 				</div>
-				<br>
+				<br> 
 				 <input type="submit" value="Registrar"> 
         	</form>
 		</div>

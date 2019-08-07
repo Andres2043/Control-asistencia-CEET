@@ -8,5 +8,5 @@ class TipoUsuario extends Model
 {
     protected $table = "tipo_usuario";
     protected $primarykey = "id_tipoUsuario";
-    protected $fillable = ("Usuario");
+    protected $fillable = ["Usuario"];
 }

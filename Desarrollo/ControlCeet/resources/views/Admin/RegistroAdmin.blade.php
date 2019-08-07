@@ -22,7 +22,7 @@
 		<div class="SpaceLogin">
 			<form action="{{ route('RegistroAdmin.Login')}}" method="POST">
 				@csrf
-						<h2 style="font-family: 'Courier New';">Registro Usuario</h2>
+						<h2 style="font-family: 'Courier New';">Registro Administrador</h2>
 					<br>
 				<div class="input-field ">
 			    <select name="TipoDocumento">

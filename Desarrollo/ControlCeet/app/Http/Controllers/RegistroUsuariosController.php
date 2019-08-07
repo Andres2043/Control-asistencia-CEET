@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\TipoDocumento;
-
-use App\TipoUsuario;
-
 use App\Usuario;
+use App\TipoDocumento;
+use App\TipoUsuario;
 
 class RegistroUsuariosController extends Controller
 {
@@ -19,10 +16,9 @@ class RegistroUsuariosController extends Controller
      */
     public function index()
     {   
-        $tipousuario=TipoUsuario::all();
         $tipodocumento=TipoDocumento::all();
-
-        return view('Usuarios/RegistroUsuarios', constant('tipousuario', 'tipodocumento'));  
+        $tipousuario=TipoUsuario::all();
+        return view('Usuarios/RegistroUsuarios', compact('tipousuario', 'tipodocumento'));  
     }
 
     /**
@@ -90,15 +86,9 @@ class RegistroUsuariosController extends Controller
     {
         //
     }
-    
-
-     public function ListadoUpdate(Request $request, $id)
-    {
-        return view('ListadoAprendiz');
-    }
 
 
-    public function Login()
+    public function Login(Request $request)
     {
         $this->validate(request(),[
 
@@ -113,8 +103,7 @@ class RegistroUsuariosController extends Controller
             'NumeroDocumento' => 'required',
 
         ]);
-
-        Usuario::create([
+            Usuario::create([
             'fk_tipoUsuario'=>$request->input('TipoUsuario'),
             'fk_tipo_documento2'=>$request->input('TipoDocumento'),
             'documento'=>$request->input('NumeroDocumento'),
@@ -124,6 +113,6 @@ class RegistroUsuariosController extends Controller
             'segundo_apellido'=>$request->input('SegundoApellido'),
             'correo'=>$request->input('correo')
         ]);
-
+        return redirect('Inicio')->with('success','El usuario ha sido creado de forma exitosa!');
     }
 }

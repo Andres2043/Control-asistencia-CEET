@@ -31,6 +31,7 @@ Route::get('Listado/Aprendices', 'RegistroUsuariosController@ListadoUpdate')->na
 
 Route::post('Validacion/Ficha', 'RegistroFichasController@Login')->name('FichaLogin.login');
 
-Route::post('Validación/Administrador', 'RegistroAdminController@Login')->name('RegistroAdmin.Login');
+Route::post('Validacion/Administrador', 'RegistroAdminController@Login')->name('RegistroAdmin.Login');
 
-Route::post('Validación/Usuario', 'RegistroUsuariosController@Login')->name('RegistroUser.Login');
+Route::post('Validacion/Usuario', 'RegistroUsuariosController@Login')->name('RegistroUser.Login');
+

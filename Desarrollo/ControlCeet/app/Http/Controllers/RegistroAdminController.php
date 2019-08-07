@@ -16,6 +16,7 @@ class RegistroAdminController extends Controller
     public function index()
     {
         $tipodocumento=TipoDocumento::all();
+        
         return view('Admin/RegistroAdmin', compact('tipodocumento'));
     }
 
